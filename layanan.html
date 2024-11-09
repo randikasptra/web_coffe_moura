@@ -4,240 +4,361 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Coffee Factory</title>
-    <link rel="stylesheet" href="./css/styles.css">
-    <style>
-        /* style.css */
+    <title>About Moura's Coffee</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<style>
 
 
 
-        /* Header Section */
-        .randi_hero {
-            background-image: url('../img/bgaboutt.jpg');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            height: 90vh;
+
+    .randi_navbar.active .hamburger div:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 10px;
+    }
+
+    .randi_navbar.active .hamburger div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .randi_navbar.active .hamburger div:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -10px;
+    }
+
+    /* Hero Section */
+    .randi_hero {
+        background-image: url('../img/bgaboutt.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        position: relative;
+    }
+
+    .randi_hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .randi_hero-content {
+        position: relative;
+        z-index: 1;
+        line-height: 1rem;
+    }
+
+    .randi_hero-content h1 {
+        margin-top: 50px;
+    }
+
+    .randi_hero h1 {
+        font-size: 5em;
+        margin-bottom: 20px;
+    }
+
+    .randi_btn {
+        background-color: #d4af37;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: background 0.3s;
+        margin-top: 2rem;
+    }
+
+    .randi_btn:hover {
+        background-color: #b89229;
+    }
+
+    /* Story Section */
+    .randi_story {
+        text-align: center;
+        padding: 50px 20px;
+        display: flex;
+        margin-top: 3rem;
+        background-color: #f8f8f8;
+    }
+
+    .randi_story2 {
+        text-align: center;
+        padding: 50px 20px;
+        display: flex;
+        margin-top: 3rem;
+        background-color: #f8f8f8;
+    }
+
+    .randi_h1 {
+        font-size: 2.5em;
+        color: #d4af37;
+        margin-bottom: 20px;
+        font-family: 'Georgia', serif;
+    }
+
+    .randi_story p {
+        max-width: 800px;
+        margin: 0 auto 30px;
+        line-height: 1.8;
+        color: #333;
+    }
+
+    .randi_story-images {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .randi_story-images img {
+        width: 45%;
+        border-radius: 8rem;
+    }
+
+    /* Instagram Section */
+    .randi_instagram {
+        background-color: #f9f9f9;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .randi_instagram h2 {
+        font-size: 2.5em;
+        color: #d4af37;
+        font-family: 'Georgia', serif;
+        margin-bottom: 20px;
+    }
+
+    .randi_instagram-feed {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .randi_instagram-feed img {
+        width: 15rem;
+        height: 15rem;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    /* Footer */
+    .randi_footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .randi_footer-content {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .randi_footer-content h3 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .randi_social-media {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .randi_social-media a {
+        color: #d4af37;
+        font-size: 1.5em;
+    }
+
+    .randi_footer p {
+        font-size: 0.9em;
+    }
+
+    .randi_footer a {
+        color: #d4af37;
+        text-decoration: none;
+        margin: 0 5px;
+    }
+
+    .randi_footer a:hover {
+        text-decoration: underline;
+    }
+
+    .ttg {
+        width: 70%;
+    }
+
+    .ttg p {
+        margin-top: 20px;
+    }
+
+    .randi_panen {
+        border-radius: 8rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .randi_navbar-list {
+            display: none;
+        }
+
+        .hamburger {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            text-align: center;
+            margin-left: auto;
+        }
+
+
+
+        .randi_menu {
+            display: block;
+            flex-direction: column;
             position: relative;
+            top: 60px;
+            right: 10px;
+
+            width: 100%;
+            padding: 10px;
+            gap: 10px;
+            background-size: 100%;
         }
 
-        .randi_hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-        }
-
-        .randi_header_content {
-            text-align: center;
-            padding-top: 5rem;
-            z-index: 1;
+        .randi_hamburger {
+            display: flex;
         }
 
         .randi_hero h1 {
-            font-size: 4rem;
-            margin-bottom: 2rem;
+            font-size: 2em;
         }
 
-        .randi_offer-cards {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+        .randi_story-images img {
+            width: 100%;
         }
 
-        .randi_card {
-            width: 200px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            border-radius: 10px;
+        .randi_instagram-feed {
+            gap: 5px;
         }
 
-        .randi_card img {
-            width: 5rem;
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-        .randi_card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-
-        }
-
-        .randi_card p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-
-        /* Offer Section */
-        .randi_offer_section {
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #f9f9f9;
-        }
-
-        .randi_offer_items {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .randi_offer_item {
-            width: 200px;
-            margin: 20px;
-        }
-
-        /* Coffee Herald Section */
-        .randi_herald_section {
-            padding: 50px 20px;
-        }
-
-        .randi_herald_items {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .randi_herald_item {
-            width: 200px;
-            margin: 20px;
-        }
-
-        /* Shop Section */
-        .randi_shop_section {
-            text-align: center;
-            padding: 50px 20px;
-            background-color: #e4bc84;
-
-        }
-
-        .randi_shop_items {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .randi_shop_item {
-            width: 150px;
-            margin: 20px;
-        }
-
-        /* Gallery Section */
-        .randi_gallery_section {
-            padding: 50px 20px;
-            text-align: center;
-        }
-
-        .randi_gallery_images img {
-            margin: 10px;
-            width: 150px;
-            height: auto;
-        }
-
-        /* Footer */
-        .randi_footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        .randi_container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            background-image: url(./img/bijiKopi2.jpg);
-            padding: 3rem 0;
-        }
-
-        .randi_card {
-            width: 150px;
-            text-align: center;
-            font-family: Arial, sans-serif;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 10px;
-            border-radius: 8px;
-            background-color: #fff;
-        }
-
-        .randi_img {
+        .randi_instagram-feed img {
             width: 100px;
-            /* Ukuran gambar */
             height: 100px;
-            /* Ukuran gambar */
-            border-radius: 50%;
-            /* Membuat gambar menjadi bulat */
+        }
+
+        .randi_story {
+            text-align: center;
+            padding: 2rem;
+            display: block;
+            margin-top: 3rem;
+            background-color: #f8f8f8;
+        }
+
+        .randi_story2 {
+            text-align: center;
+            padding: 50px 20px;
+            display: block;
+            margin-top: 3rem;
+            background-color: #f8f8f8;
+        }
+
+        .randi_story h1 {
+            font-size: 2.5em;
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            margin-bottom: 30px;
+        }
+
+        .randi_story p {
+            line-height: 1.8;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .randi_story-images {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .randi_story-images img {
+            width: 15rem;
+            border-radius: 15rem;
+        }
+
+        .ttg {
+            width: 100%;
+            padding: 0px 1rem;
+        }
+
+        .ttg p {
+            margin-top: 20px;
+        }
+
+        .randi_panen {
+            border-radius: 15rem;
+        }
+
+        .randi_instagram {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .randi_instagram h2 {
+            font-size: 2.5em;
+            color: #d4af37;
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+        }
+
+        .randi_instagram-feed {
+            display: block;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px;
+            flex-direction: column;
+        }
+
+        .randi_instagram-feed img {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 10px;
             object-fit: cover;
-            /* Menjaga proporsi gambar */
-            margin-bottom: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .randi_hero h1 {
+            font-size: 1.5em;
         }
 
-        .randi_card h3 {
+        .randi_btn {
             font-size: 1em;
-            margin: 10px 0 5px;
-            font-weight: bold;
+            padding: 8px 15px;
         }
 
-        .randi_card p {
-            font-size: 0.9em;
-            color: #555;
-            margin: 0;
+        .randi_story h2,
+        .randi_instagram h2 {
+            font-size: 1.8em;
         }
-
-            @media (max-width: 768px) {
-                .randi_navbar-list {
-                    display: none;
-                }
-
-                .hamburger {
-                    display: flex;
-                    margin-left: auto;
-                }
-
-                .randi_navbar.active .randi_navbar-list {
-                    display: block;
-                    position: absolute;
-                    top: 70px;
-                    left: 0;
-                    right: 0;
-                    background-color: #fff;
-                    width: 100%;
-                    padding: 20px;
-                }
-                
-
-                .randi_menu {
-                    display: block;
-                    flex-direction: column;
-                    position: relative;
-                    top: 60px;
-                    right: 10px;
-
-                    width: 100%;
-                    padding: 10px;
-                    gap: 10px;
-                    background-size: 100%;
-                }
-
-                .randi_hamburger {
-                    display: flex;
-                }
-            }
-    </style>
-</head>
+    }
+</style>
 
 <body>
     <header class="randi_navbar">
@@ -259,164 +380,69 @@
             </ul>
         </nav>
     </header>
-    <!-- Header Section -->
 
-
-
-    <div class="randi_hero">
-        <div class="randi_header_content">
-            <h1>Moura's Coffee</h1>
-            <p>"Rasakan kehangatan dan aroma yang menggoda dari setiap tegukan kopi Moura. Terbuat dari biji kopi
-                pilihan, setiap cangkir <br> membawa kelezatan dan kekuatan yang tiada tara. Siap memulai hari dengan
-                energi
-                yang sempurna?"</p>
-
-        </div>
-    </div>
-
-    <!-- Our Delicious Offer Section -->
-    <section class="randi_offer_section">
-        <div class="randi_offer_judul">
-            <h2>Top Pick Coffee Today</h2>
-            <p>Mood hari ini? Serahkan pada kopi! Pilih rasa yang tepat dan temukan energi baru di setiap tegukan</p>
-        </div>
-        <div class="randi_offer-cards">
-            <div class="randi_card">
-                <img src="../img/capucino.png" alt="Types of Coffee">
-                <h3>Cappucino Coffee</h3>
-                <p>The most common and popular style.</p>
+    <!-- Hero Section -->
+    <section class="randi_hero">
+        <div style="z-index: 1;">
+            <div class="randi_hero-content">
+                <h1 class="charm-regular">Welcome</h1>
+                <h1>Moura's Coffee</h1>
             </div>
-            <div class="randi_card">
-                <img src="../img/matcha.png" alt="Bean Varieties">
-                <h3>Matcha Coffee</h3>
-                <p>The specialty options with an exquisite taste.</p>
-            </div>
-            <div class="randi_card">
-                <img src="../img/ekpreso.png" alt="Coffee & Pastry" style="margin-top: 35px;">
-                <h3>Ekpresso</h3>
-                <p>Find the classic coffee to the exquisite options.</p>
-            </div>
-            <div class="randi_card">
-                <img src="../img/coffe late.png" alt="Coffee to Go">
-                <h3>Coffee Latte</h3>
-                <p>Experience fresh coffee on-the-go.</p>
-            </div>
+            <button class="randi_btn">Reserve a Table</button>
         </div>
     </section>
 
-    <!-- The Coffee Herald Section -->
-    <section class="randi_herald_section">
-        <h2>The Coffee Herald</h2>
-        <div class="randi_container">
-            <div class="randi_card">
-                <img src="./img/capucino1.jpg" alt="Espresso" class="randi_img">
-                <h3>Espresso / 2.00</h3>
-                <p>Consectetur adipiscing elit, sed do eiusmod tempor.</p>
-            </div>
-
-            <div class="randi_card">
-                <img src="./img/flat white.jpg" alt="Double Espresso" class="randi_img">
-                <h3>Double Espresso / 2.50</h3>
-                <p>Reprehenderit in voluptate velit esse cillum dolore eu.</p>
-            </div>
-
-            <div class="randi_card">
-                <img src="./img/ekpreso.png" alt="Americano" class="randi_img">
-                <h3>Americano / 3.00</h3>
-                <p>Lorem ipsum dolor sit amet, adipiscing elit.</p>
-            </div>
-            <div class="randi_card">
-                <img src="./img/capucino1.jpg" alt="Espresso" class="randi_img">
-                <h3>Espresso / 2.00</h3>
-                <p>Consectetur adipiscing elit, sed do eiusmod tempor.</p>
-            </div>
-
-            <div class="randi_card">
-                <img src="./img/flat white.jpg" alt="Double Espresso" class="randi_img">
-                <h3>Double Espresso / 2.50</h3>
-                <p>Reprehenderit in voluptate velit esse cillum dolore eu.</p>
-            </div>
-
-            <div class="randi_card">
-                <img src="./img/ekpreso.png" alt="Americano" class="randi_img">
-                <h3>Americano / 3.00</h3>
-                <p>Lorem ipsum dolor sit amet, adipiscing elit.</p>
-            </div>
-            <div class="randi_card">
-                <img src="./img/capucino1.jpg" alt="Espresso" class="randi_img">
-                <h3>Espresso / 2.00</h3>
-                <p>Consectetur adipiscing elit, sed do eiusmod tempor.</p>
-            </div>
-
-            <div class="randi_card">
-                <img src="./img/flat white.jpg" alt="Double Espresso" class="randi_img">
-                <h3>Double Espresso / 2.50</h3>
-                <p>Reprehenderit in voluptate velit esse cillum dolore eu.</p>
-            </div>
-
-            <div class="randi_card">
-                <img src="./img/ekpreso.png" alt="Americano" class="randi_img">
-                <h3>Americano / 3.00</h3>
-                <p>Lorem ipsum dolor sit amet, adipiscing elit.</p>
-            </div>
-            <div class="randi_card">
-                <img src="./img/capucino1.jpg" alt="Espresso" class="randi_img">
-                <h3>Espresso / 2.00</h3>
-                <p>Consectetur adipiscing elit, sed do eiusmod tempor.</p>
-            </div>
-
-            <div class="randi_card">
-                <img src="./img/flat white.jpg" alt="Double Espresso" class="randi_img">
-                <h3>Double Espresso / 2.50</h3>
-                <p>Reprehenderit in voluptate velit esse cillum dolore eu.</p>
-            </div>
-
-            <div class="randi_card">
-                <img src="./img/ekpreso.png" alt="Americano" class="randi_img">
-                <h3>Americano / 3.00</h3>
-                <p>Lorem ipsum dolor sit amet, adipiscing elit.</p>
-            </div>
-
-            <!-- Tambahkan card lain di sini sesuai kebutuhan -->
+    <!-- Story Section -->
+    <section class="randi_story">
+        <div class="ttg">
+            <h1 class="randi_h1">Kopi Custom & Penyajian Khusus</h1>
+            <p>"Di Moura's Coffee, kami percaya bahwa setiap orang memiliki selera kopi yang unik. Itu sebabnya kami
+                menawarkan layanan Kopi Custom yang memungkinkan Anda untuk menciptakan kopi sesuai dengan keinginan
+                Anda. Pilih dari berbagai pilihan biji kopi terbaik, tentukan kekuatan rasa, dan pilih metode penyeduhan
+                yang Anda sukai. Setiap cangkir yang kami sajikan adalah perpaduan sempurna antara kualitas dan
+                keahlian."</p>
+        </div>
+        <div class="randi_story-images">
+            <img src="../img/layanan1.jpg" alt="Food Dish" class="randi_panen">
+        </div>
+    </section>
+    <section class="randi_story2">
+        <div class="randi_story-images">
+            <img src="../img/layanan2.jpg" alt="Food Dish" class="randi_panen">
+        </div>
+        <div class="ttg">
+            <h1 class="randi_h1">Pengiriman Kopi ke Rumah</h1>
+            <p>"Nikmati kopi premium dari Moura's Coffee tanpa harus keluar rumah! Dengan layanan Pengiriman Kopi ke
+                Rumah, Anda bisa menikmati kopi favorit kapan saja, langsung di depan pintu Anda. Kami menyediakan
+                berbagai pilihan kopi, mulai dari yang klasik hingga yang kekinian, yang dikemas dengan penuh perhatian
+                agar tetap segar dan nikmat saat sampai di tangan Anda."</p>
+        </div>
+    </section>
+    <section class="randi_story">
+        <div class="ttg">
+            <h1 class="randi_h1">Catering Kopi untuk Acara</h1>
+            <p>"Moura's Coffee siap menghadirkan pengalaman kopi premium untuk acara Anda, mulai dari seminar, rapat
+                bisnis, hingga acara spesial lainnya. Kami menyediakan layanan Catering Kopi dengan berbagai pilihan
+                kopi yang disesuaikan dengan tema acara Anda. Dengan barista berpengalaman dan kualitas kopi terbaik,
+                setiap tamu akan menikmati kopi segar yang membuat acara Anda semakin berkesan.""</p>
+        </div>
+        <div class="randi_story-images">
+            <img src="../img/layanan4.jpg" alt="Food Dish" class="randi_panen">
         </div>
     </section>
 
-    <!-- Online Coffee Shop Section -->
-    <section class="randi_shop_section">
-        <h2>Online Coffee Shop</h2>
-        <div class="randi_shop_items">
-            <div class="randi_shop_item">
-                <h3>Ethiopia Coffee</h3>
-                <p>$15.00</p>
-            </div>
-            <div class="randi_shop_item">
-                <h3>Kenya Coffee</h3>
-                <p>$12.00</p>
-            </div>
-            <div class="randi_shop_item">
-                <h3>Columbia Coffee</h3>
-                <p>$18.00</p>
-            </div>
-            <div class="randi_shop_item">
-                <h3>Guatemala Coffee</h3>
-                <p>$20.00</p>
-            </div>
+    <!-- Instagram Section -->
+    <section class="randi_instagram">
+        <h2>Instagram Happenings</h2>
+        <div class="randi_instagram-feed">
+            <img src="./img/ig1.jpg" alt="Instagram Post 1">
+            <img src="./img/ig2.jpg" alt="Instagram Post 2">
+            <img src="./img/ig3.jpg" alt="Instagram Post 3">
+            <img src="./img/ig4.jpg" alt="Instagram Post 4">
+            <img src="./img/ig5.jpg" alt="Instagram Post 5">
         </div>
     </section>
 
-    <!-- Our Sweet Gallery Section -->
-    <section class="randi_gallery_section">
-        <h2>Our Sweet Gallery</h2>
-        <div class="randi_gallery_images">
-            <!-- Replace these with your images -->
-            <img src="./img/ig1.jpg" alt="Gallery Image 1">
-            <img src="./img/ig2.jpg" alt="Gallery Image 2">
-            <img src="./img/ig5.jpg" alt="Gallery Image 3">
-            <img src="./img/ig3.jpg" alt="Gallery Image 4">
-        </div>
-    </section>
-
-    <!-- Footer Section -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-section">
@@ -472,10 +498,7 @@
     </footer>
 
 
-    <script src="../js/script.js">
-
-    </script>
-
+    <script src="../js/script.js"></script>
 </body>
 
 </html>

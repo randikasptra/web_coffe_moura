@@ -21,26 +21,35 @@
 
 .randi_navbar {
     padding: 20px;
-    background-color: #fff;
+    background-color: #A67C52; /* Dark background for navbar */
     display: flex;
     justify-content: center;
-
     position: sticky;
     z-index: 10;
     top: 0px;
-
 }
 
 .randi_navbar-list {
     list-style-type: none;
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
 .randi_navbar-list a {
     text-decoration: none;
-    color: #333;
+    color: #fff; /* White text for links */
     font-weight: bold;
+}
+
+.randi_navbar-list .logo {
+    margin: 0 20px;
+}
+
+.randi_navbar-list .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /* Make logo circular */
 }
 
 /* Hamburger Menu */
@@ -56,7 +65,7 @@
 .hamburger div {
     width: 36px;
     height: 4px;
-    background-color: #333;
+    background-color: #fff; /* White for hamburger lines */
     border-radius: 5px;
     transition: all 0.3s;
 }
@@ -195,26 +204,34 @@
     }
 
     .randi_navbar.active .randi_navbar-list {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 20px;
+        text-align: center;
     }
-
+    
     .randi_menu {
         display: block;
         flex-direction: column;
         position: relative;
         top: 60px;
         right: 10px;
-
+        
         width: 100%;
         padding: 10px;
         gap: 10px;
         background-size: 100%;
     }
-
+    
     .randi_hamburger {
         display: flex;
     }
-
     /* Footer*/
     .footer-container {
         flex-direction: column;

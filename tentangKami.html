@@ -5,62 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Moura's Coffee</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 
 <style>
     /* Navbar */
-    .randi_navbar {
-        padding: 20px;
-        background-color: #fff;
-        display: flex;
-        justify-content: center;
-    }
-
-    .randi_navbar-list {
-        list-style-type: none;
-        display: flex;
-        gap: 20px;
-    }
-
-    .randi_navbar-list a {
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-    }
-
-    /* Hamburger Menu */
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 25px;
-        cursor: pointer;
-    }
-
-    .hamburger div {
-        width: 36px;
-        height: 4px;
-        background-color: #333;
-        border-radius: 5px;
-        transition: all 0.3s;
-    }
+    
 
     /* Mobile Navbar */
     .randi_navbar-list {
         display: flex;
     }
 
-    .randi_navbar.active .randi_navbar-list {
-        display: block;
-        position: absolute;
-        top: 70px;
-        right: 10px;
-        background-color: #fff;
-        width: 100%;
-        padding: 20px;
-    }
+   
 
     .randi_navbar.active .hamburger div:nth-child(1) {
         transform: rotate(45deg);
@@ -271,17 +228,7 @@
             margin-left: auto;
         }
 
-        .randi_navbar.active .randi_navbar-list {
-            display: block;
-            position: absolute;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background-color: #fff;
-            width: 100%;
-            padding: 20px;
-        }
-        
+       
         .randi_menu {
             display: block;
             flex-direction: column;
@@ -297,7 +244,10 @@
         
         .randi_hamburger {
             display: flex;
-        }
+        } 
+       
+
+       
         .randi_hero h1 {
             font-size: 2em;
         }
