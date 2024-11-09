@@ -196,6 +196,46 @@
             color: #555;
             margin: 0;
         }
+
+            @media (max-width: 768px) {
+                .randi_navbar-list {
+                    display: none;
+                }
+
+                .hamburger {
+                    display: flex;
+                    margin-left: auto;
+                }
+
+                .randi_navbar.active .randi_navbar-list {
+                    display: block;
+                    position: absolute;
+                    top: 70px;
+                    left: 0;
+                    right: 0;
+                    background-color: #fff;
+                    width: 100%;
+                    padding: 20px;
+                }
+                
+
+                .randi_menu {
+                    display: block;
+                    flex-direction: column;
+                    position: relative;
+                    top: 60px;
+                    right: 10px;
+
+                    width: 100%;
+                    padding: 10px;
+                    gap: 10px;
+                    background-size: 100%;
+                }
+
+                .randi_hamburger {
+                    display: flex;
+                }
+            }
     </style>
 </head>
 
