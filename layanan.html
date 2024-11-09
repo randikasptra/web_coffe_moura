@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Example</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: Arial, sans-serif;
+    }
+    
+    .footer {
+        background-color: #0e4d3a;
+        color: #fff;
+        padding: 40px 0;
+    }
+    
+    .footer-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 20px;
+    }
+    
+    .footer-section h4 {
+        margin-bottom: 15px;
+        font-size: 1.1em;
+    }
+    
+    .footer-section ul {
+        list-style: none;
+    }
+    
+    .footer-section ul li a {
+        color: #fff;
+        text-decoration: none;
+        margin-bottom: 10px;
+        display: block;
+    }
+    
+    .footer-section ul li a:hover {
+        text-decoration: underline;
+    }
+    
+    .logo {
+        width: 50px;
+        height: auto;
+    }
+    
+    .social-media a {
+        color: #fff;
+        font-size: 1.5em;
+        margin-right: 15px;
+        text-decoration: none;
+    }
+    
+    .app-download img {
+        width: 120px;
+        margin: 10px 0;
+    }
+    
+    .footer-bottom {
+        border-top: 1px solid #fff;
+        padding-top: 20px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .footer-bottom ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+    
+    .footer-bottom ul li a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 15px;
+    }
+    
+    .footer-bottom ul li a:hover {
+        text-decoration: underline;
+    }
+    
+    .footer-bottom p {
+        margin-top: 10px;
+        font-size: 0.9em;
+    }
+    
+</style>
+<body>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="logo.png" alt="Logo" class="logo"> <!-- Replace logo.png with your logo path -->
+            </div>
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <ul>
+                    <li><a href="#">Our Heritage</a></li>
+                    <li><a href="#">Our Company</a></li>
+                    <li><a href="#">Coffeehouse</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Responsibility</h4>
+                <ul>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Ethical Sourcing</a></li>
+                    <li><a href="#">Environment</a></li>
+                    <li><a href="#">Diversity</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Season's Gifting</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Delivery</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social-media">
+                <h4>Social Media</h4>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <div class="app-download">
+                    <img src="google-play.png" alt="Google Play"> <!-- Replace with Google Play image -->
+                    <img src="app-store.png" alt="App Store"> <!-- Replace with App Store image -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <ul>
+                <li><a href="#">Web Accessibility</a></li>
+                <li><a href="#">Privacy Statement</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <p>&copy; 2022 Starbucks Coffee Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

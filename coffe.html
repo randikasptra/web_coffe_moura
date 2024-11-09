@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randi's Coffee Shop</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+       
+
+        /* Header */
+
+
+        .randi_search-cart input {
+            padding: 5px;
+            border: none;
+        }
+
+        .randi_search-cart button {
+            padding: 5px;
+            border: none;
+            background-color: #d4af37;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .randi_hero {
+            background-image: url('../img/herocoffe.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            color: #fff;
+            text-align: left;
+            position: relative;
+        }
+
+        .randi_hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .randi_hero-content {
+            position: relative;
+            z-index: 1;
+            line-height: 1rem;
+            margin-left: 4rem;
+            font-size: 1rem;
+        }
+
+        .randi_hero-content h1 {
+            margin-top: 50px;
+        }
+
+        .randi_hero h1 {
+            font-size: 5em;
+            margin-bottom: 20px;
+        }
+
+        .randi_btn {
+            margin-left: 4rem;
+            background-color: #d4af37;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 2rem;
+        }
+
+        .randi_btn:hover {
+            background-color: #b89229;
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        /* Card Style */
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 200px;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Image Section */
+        .card-image {
+            background-size: cover;
+            background-position: center;
+            height: 150px;
+            width: 100%;
+        }
+
+        /* Content Section */
+        .card-content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .card-description {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .card-price {
+            font-size: 1em;
+            color: #d4af37;
+            font-weight: bold;
+        }
+
+        .btn-order {
+            background-color: #d4af37;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background 0.3s;
+        }
+
+        .btn-order:hover {
+            background-color: #b89229;
+        }
+
+        /* Awal Main */
+        .randi_main {
+            text-align: center;
+            padding: 30px;
+            background-color: #f9f9f9;
+        }
+
+        /* Title Styling */
+        .randi_title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Categories Container */
+        .randi_categories {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Category Item Styling */
+        .randi_category-item {
+            width: 30rem;
+            height: 30rem;
+            background-color: #333;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Category Content (Overlay) */
+        .randi_category-content {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.6);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        /* Category Title */
+        .randi_category-content h3 {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        /* View More Link */
+        .randi_view-more {
+            font-size: 0.9em;
+            color: #fff;
+            text-decoration: none;
+            background-color: #d4af37;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .boxcoffe {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 10rem 0;
+        }
+
+        .boxcoffe img {
+            width: 30rem;
+            height: 30rem;
+            object-fit: cover;
+
+        }
+
+        /* Background images for each category item (you can replace the URLs) */
+        .randi_category-item:nth-child(1) {
+            background-image: url('../img/Affogato.jpg');
+            /* Replace with your image */
+        }
+
+        .randi_category-item:nth-child(2) {
+            background-image: url('../img/ekpreso.png');
+            /* Replace with your image */
+        }
+
+        .randi_category-item:nth-child(3) {
+            background-image: url('../img/irish.jpg');
+            /* Replace with your image */
+        }
+
+        /* Akhir Main */
+
+
+
+        @media (max-width: 768px) {
+            .randi_categories {
+                display: block;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .randi_hero {
+                background-image: url('../img/herocoffe.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                height: 50vh;
+                display: flex;
+                align-items: center;
+                justify-content: left;
+                color: #fff;
+                text-align: left;
+                position: relative;
+            }
+
+            .randi_hero-content {
+                position: relative;
+                z-index: 1;
+                line-height: 10px;
+                margin-left: 4rem;
+                font-size: 10px;
+            }
+
+            /* Category Item Styling */
+            .randi_categories {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            /* Category Item Styling */
+            .randi_category-item {
+                width: 90%;
+                max-width: 23rem;
+                height: 23rem;
+                background-color: #333;
+                background-size: cover;
+                background-position: center;
+                border-radius: 10px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* Category Content (Overlay) */
+            .randi_category-content {
+                bottom: 0;
+                width: 100%;
+                color: #fff;
+                text-align: center;
+                padding: 20px 0;
+                background: rgba(0, 0, 0, 0.6);
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+
+            .boxcoffe {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+                justify-content: center;
+                margin: 5rem 0;
+            }
+
+            .boxcoffe img {
+                width: 20rem;
+                height: 20rem;
+                object-fit: cover;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="randi_navbar">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul class="randi_navbar-list">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./tentangKami.html">Tentang Kami</a></li>
+                <li><a href="./coffe.html">Coffee</a></li>
+                <img src="../img/LogoMoura.jpeg" alt="" style="width: 2rem; border-radius: 30px;">
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="./layanan.html">Layanan</a></li>
+                <li><a href="./member.html">Member</a></li>
+                <li><a href="./kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="randi_hero">
+        <div style="z-index: 1;">
+            <div class="randi_hero-content">
+                <h1 class="charm-regular">Welcome</h1>
+                <h1>Menu Coffee</h1>
+            </div>
+            <button class="randi_btn">Reserve a Table</button>
+        </div>
+    </section>
+
+    <!-- Main -->
+    <!-- Top Categories Section -->
+    <section class="randi_main">
+        <h2 class="randi_title">Top Categories</h2>
+        <div class="randi_categories">
+            <!-- Category Item 1 -->
+            <div class="randi_category-item">
+                <div class="randi_category-content">
+                    <h3>Caffe Mocha</h3>
+                    <a href="#" class="randi_view-more">View More</a>
+                </div>
+            </div>
+            <!-- Category Item 2 -->
+            <div class="randi_category-item">
+                <div class="randi_category-content">
+                    <h3>Espresso Americano</h3>
+                    <a href="#" class="randi_view-more">View More</a>
+                </div>
+            </div>
+            <!-- Category Item 3 -->
+            <div class="randi_category-item">
+                <div class="randi_category-content">
+                    <h3>Cappuccino</h3>
+                    <a href="#" class="randi_view-more">View More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="card-container">
+
+        <!-- Coffee Card -->
+        <div class="card">
+            <div class="card-image" style="background-image: url('../img/coffe1.jpg');"></div>
+            <div class="card-content">
+                <h3 class="card-title">Coffee Mocca</h3>
+                <p class="card-description">Perpaduan kopi mocca dengan rasa cokelat yang lembut, untuk pecinta cita
+                    rasa manis dan pahit.</p>
+                <p class="card-price">IDR 25,000</p>
+                <button class="btn-order">Order Now</button>
+            </div>
+        </div>
+
+        <!-- Another Coffee Card -->
+        <div class="card">
+            <div class="card-image" style="background-image: url('../img/coffe2.jpg');"></div>
+            <div class="card-content">
+                <h3 class="card-title">Espresso</h3>
+                <p class="card-description">Kopi klasik dengan cita rasa kuat yang cocok untuk dinikmati kapan saja.</p>
+                <p class="card-price">IDR 20,000</p>
+                <button class="btn-order">Order Now</button>
+            </div>
+        </div>
+
+        <!-- Additional Coffee Card -->
+        <div class="card">
+            <div class="card-image" style="background-image: url('../img/capucino1.jpg');"></div>
+            <div class="card-content">
+                <h3 class="card-title">Cappuccino</h3>
+                <p class="card-description">Kombinasi espresso, susu, dan busa lembut untuk pengalaman yang halus dan
+                    creamy.</p>
+                <p class="card-price">IDR 30,000</p>
+                <button class="btn-order">Order Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image" style="background-image: url('../img/americano.jpg');"></div>
+            <div class="card-content">
+                <h3 class="card-title">Americano</h3>
+                <p class="card-description">Espresso yang dicampur dengan air panas, memberikan rasa kopi yang lebih
+                    ringan namun tetap beraroma.</p>
+                <p class="card-price">IDR 30,000</p>
+                <button class="btn-order">Order Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image" style="background-image: url('../img/coffe\ late.png');"></div>
+            <div class="card-content">
+                <h3 class="card-title">Latte</h3>
+                <p class="card-description">Espresso yang dicampur dengan banyak susu kukus dan sedikit busa, memberikan
+                    rasa lembut dan ringan.</p>
+                <p class="card-price">IDR 30,000</p>
+                <button class="btn-order">Order Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image" style="background-image: url('../img/mactha.jpg');"></div>
+            <div class="card-content">
+                <h3 class="card-title">Matcha</h3>
+                <p class="card-description">Perpaduan matcha bubuk, susu kukus, dan sedikit pemanis, menghasilkan rasa
+                    lembut.</p>
+                <p class="card-price">IDR 30,000</p>
+                <button class="btn-order">Order Now</button>
+            </div>
+        </div>
+
+        <div class="boxcoffe">
+            <div class="">
+                <div class="">
+                    <img src="../img/membuatkopi1.jpg" alt="">
+                </div>
+            </div>
+            <div class="">
+                <div class="">
+                    <img src="../img/membuatkopi2.jpg" alt="">
+                </div>
+            </div>
+            <div class="">
+                <div class="">
+                    <img src="../img/membuatkopi3.jpg" alt="">
+                </div>
+            </div>
+            <div class="">
+                <div class="">
+                    <img src="../img/membuatkopi4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-image" style="background-image: url('../img/irish.jpg');"></div>
+            <div class="card-content">
+                <h3 class="card-title">Irish</h3>
+                <p class="card-description">Kopi dengan tambahan whiskey, gula, dan krim kocok, memberikan rasa hangat
+                    dan kaya dengan sedikit manis.</p>
+                <p class="card-price">IDR 30,000</p>
+                <button class="btn-order">Order Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image" style="background-image: url('../img/flat\ white.jpg');"></div>
+            <div class="card-content">
+                <h3 class="card-title">Flat White</h3>
+                <p class="card-description">Espresso yang dicampur dengan susu kukus tanpa busa, menciptakan tekstur
+                    creamy yang lembut dan halus..</p>
+                <p class="card-price">IDR 30,000</p>
+                <button class="btn-order">Order Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image" style="background-image: url('../img/Frappuccino.jpg');"></div>
+            <div class="card-content">
+                <h3 class="card-title">Frappuccino</h3>
+                <p class="card-description">Kopi dingin dengan campuran es, susu, sirup, dan whipped cream di atasnya,
+                    memberikan rasa manis dan tekstur segar yang sempurna untuk cuaca panas.</p>
+                <p class="card-price">IDR 30,000</p>
+                <button class="btn-order">Order Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image" style="background-image: url('../img/Affogato.jpg');"></div>
+            <div class="card-content">
+                <h3 class="card-title">Affogato</h3>
+                <p class="card-description">Sajian sederhana berupa espresso panas yang dituangkan di atas es krim
+                    vanila, menghasilkan perpaduan panas-dingin yang nikmat.</p>
+                <p class="card-price">IDR 30,000</p>
+                <button class="btn-order">Order Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image" style="background-image: url('../img/Cold\ Brew.jpg');"></div>
+            <div class="card-content">
+                <h3 class="card-title">Cold Brew</h3>
+                <p class="card-description">Kopi yang diseduh dengan air dingin selama berjam-jam, menghasilkan rasa
+                    yang halus, rendah keasaman, dan menyegarkan.</p>
+                <p class="card-price">IDR 30,000</p>
+                <button class="btn-order">Order Now</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image" style="background-image: url('../img/Cortado.jpg');"></div>
+            <div class="card-content">
+                <h3 class="card-title">Cortado</h3>
+                <p class="card-description">Espresso yang dicampur dengan susu kukus dalam porsi yang sama, menghasilkan
+                    rasa seimbang antara kopi pekat dan creamy.</p>
+                <p class="card-price">IDR 30,000</p>
+                <button class="btn-order">Order Now</button>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="../img/LogoMoura.jpeg" alt="Logo" class="logo"> <!-- Replace logo.png with your logo path -->
+            </div>
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <ul>
+                    <li><a href="#">Our Heritage</a></li>
+                    <li><a href="#">Our Company</a></li>
+                    <li><a href="#">Coffeehouse</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Responsibility</h4>
+                <ul>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Ethical Sourcing</a></li>
+                    <li><a href="#">Environment</a></li>
+                    <li><a href="#">Diversity</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Season's Gifting</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Delivery</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social-media">
+                <h4>Social Media</h4>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <div class="app-download">
+                    <img src="google-play.png" alt="Google Play"> <!-- Replace with Google Play image -->
+                    <img src="app-store.png" alt="App Store"> <!-- Replace with App Store image -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <ul>
+                <li><a href="#">Web Accessibility</a></li>
+                <li><a href="#">Privacy Statement</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <p>&copy; 2022 Starbucks Coffee Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Randi's Coffee Shop</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<style>
+    /* Reset styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+
+    /* Navbar */
+    .randi_navbar {
+        padding: 20px;
+        background-color: #fff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .randi_navbar-list {
+        list-style-type: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .randi_navbar-list a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .hamburger div {
+        width: 30px;
+        height: 4px;
+        background-color: #333;
+        border-radius: 5px;
+        transition: all 0.3s;
+    }
+
+    /* Mobile Navbar */
+    .randi_navbar-list {
+        display: flex;
+    }
+
+    .randi_navbar.active .randi_navbar-list {
+        display: block;
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        background-color: #fff;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .randi_navbar.active .hamburger div:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 7px;
+    }
+
+    .randi_navbar.active .hamburger div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .randi_navbar.active .hamburger div:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -7px;
+    }
+
+    /* Media Queries for Mobile */
+    @media (max-width: 768px) {
+        .randi_navbar-list {
+            display: none;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+
+        .randi_navbar.active .randi_navbar-list {
+            display: block;
+        }
+    }
+
+    /* Hero Section */
+    .randi_hero {
+        background-image: url(../img/BG-Hero.jpg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 50px;
+        background-color: #f5f5f5;
+    }
+</style>
+
+<body>
+    <!-- Navbar -->
+    <header class="randi_navbar">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul class="randi_navbar-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tentang Kami</a></li>
+                <li><a href="#">Coffee</a></li>
+                <li><a href="#">Menu</a></li>
+                <img src="../img/LogoMoura.jpeg" alt="" style="width: 2rem; border-radius: 30px;">
+                <li><a href="#">Layanan</a></li>
+                <li><a href="#">Member</a></li>
+                <li><a href="#">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="randi_hero">
+        <div class="randi_hero-content">
+            <h1>Moura's Coffee, Cita Rasa yang Tak Terlupakan</h1>
+            <i><p style="color: #f5f5f5; font-size: 1rem;">Dari secangkir kopi terbaik, hadirkan momen spesial dalam setiap detik...</p></i>
+            <a href="#" class="randi_hero-button">Shop Now</a>
+        </div>
+        <div class="">
+            <img src="../img/coffe_bg_1.png" class="randi_hero-image" alt="Coffee Cup">
+        </div>
+    </section>
+
+    <!-- Add other sections here -->
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.querySelector('.randi_navbar');
+            navbar.classList.toggle('active');
+        }
+    </script>
+</body>
+
+</html>

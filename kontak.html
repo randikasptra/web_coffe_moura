@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Grid</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main Image Grid Styling */
+.randi_image-grid {
+    display: grid;
+    gap: 10px;
+    padding: 20px;
+}
+
+/* Grid Layout for Desktop */
+.randi_grid-item {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.randi_grid-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Grid Columns */
+@media (min-width: 1024px) {
+    .randi_image-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .randi_image-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .randi_image-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Responsive Image Grid Section -->
+    <section class="randi_image-grid">
+        <div class="randi_grid-item"><img src="../img/americano.jpg" alt="Coffee Image 1"></div>
+        <div class="randi_grid-item"><img src="../img/americano.jpg" alt="Coffee Image 1"></div>
+        <div class="randi_grid-item"><img src="../img/americano.jpg" alt="Coffee Image 1"></div>
+        <div class="randi_grid-item"><img src="../img/americano.jpg" alt="Coffee Image 1"></div>
+    </section>
+
+</body>
+</html>
+

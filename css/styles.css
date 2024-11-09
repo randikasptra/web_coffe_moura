@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.charm-regular {
+    font-family: "Charm", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.randi_merriweather {
+    font-family: "Merriweather Sans", sans-serif;
+}
+
+.randi_navbar {
+    padding: 20px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+
+    position: sticky;
+    z-index: 10;
+    top: 0px;
+
+}
+
+.randi_navbar-list {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.randi_navbar-list a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 36px;
+    height: 4px;
+    background-color: #333;
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+/* Mobile Navbar */
+.randi_navbar-list {
+    display: flex;
+}
+
+.randi_navbar.active .randi_navbar-list {
+    display: block;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    background-color: #fff;
+    width: 100%;
+    padding: 20px;
+}
+
+.randi_navbar.active .hamburger div:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 10px;
+}
+
+.randi_navbar.active .hamburger div:nth-child(2) {
+    opacity: 0;
+}
+
+.randi_navbar.active .hamburger div:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -10px;
+}
+
+/*Footer*/
+.footer {
+    background-color: #6b4c35;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    /* Adjusts layout for smaller screens */
+    margin: 20px 0;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+.logo {
+    width: 8rem;
+    height: auto;
+    border-radius: 4rem;
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 1.5em;
+    margin-right: 15px;
+    text-decoration: none;
+}
+
+.app-download img {
+    width: 120px;
+    margin: 10px 0;
+}
+
+.footer-bottom {
+    border-top: 1px solid #fff;
+    padding-top: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-bottom ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    flex-wrap: wrap;
+}
+
+.footer-bottom ul li a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.footer-bottom ul li a:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom p {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .randi_navbar-list {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .randi_navbar.active .randi_navbar-list {
+        display: block;
+    }
+
+    .randi_menu {
+        display: block;
+        flex-direction: column;
+        position: relative;
+        top: 60px;
+        right: 10px;
+
+        width: 100%;
+        padding: 10px;
+        gap: 10px;
+        background-size: 100%;
+    }
+
+    .randi_hamburger {
+        display: flex;
+    }
+
+    /* Footer*/
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .social-media {
+        display: flex;
+        justify-content: center;
+    }
+
+    .footer-bottom ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-bottom ul li {
+        margin: 5px 0;
+    }
+}
+
+.randi_hamburger.open+.randi_menu {
+    display: flex;
+}

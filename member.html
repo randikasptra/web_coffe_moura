@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Categories</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Main Section */
+        .randi_main {
+            text-align: center;
+            padding: 30px;
+            background-color: #f9f9f9;
+        }
+
+        /* Title Styling */
+        .randi_title {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Categories Container */
+        .randi_categories {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        /* Category Item Styling */
+        .randi_category-item {
+            width: 30rem;
+            height: 30rem;
+            background-color: #333;
+            background-size: 30rem;
+            background-position: center;
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Category Content (Overlay) */
+        .randi_category-content {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            background: rgba(0, 0, 0, 0.6);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            background-size: 30rem;
+        }
+
+        /* Category Title */
+        .randi_category-content h3 {
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        /* View More Link */
+        .randi_view-more {
+            font-size: 0.9em;
+            color: #fff;
+            text-decoration: none;
+            background-color: #d4af37;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        /* Background images for each category item (you can replace the URLs) */
+        .randi_category-item:nth-child(1) {
+            background-image: url('../img/Affogato.jpg');
+            /* Replace with your image */
+        }
+
+        .randi_category-item:nth-child(2) {
+            background-image: url('../img/ekpreso.png');
+            /* Replace with your image */
+        }
+
+        .randi_category-item:nth-child(3) {
+            background-image: url('../img/irish.jpg');
+            /* Replace with your image */
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Top Categories Section -->
+    <section class="randi_main">
+        <h2 class="randi_title">Top Categories</h2>
+        <div class="randi_categories">
+            <!-- Category Item 1 -->
+            <div class="randi_category-item">
+                <div class="randi_category-content">
+                    <h3>Caffe Mocha</h3>
+                    <a href="#" class="randi_view-more">View More</a>
+                </div>
+            </div>
+            <!-- Category Item 2 -->
+            <div class="randi_category-item">
+                <div class="randi_category-content">
+                    <h3>Espresso Americano</h3>
+                    <a href="#" class="randi_view-more">View More</a>
+                </div>
+            </div>
+            <!-- Category Item 3 -->
+            <div class="randi_category-item">
+                <div class="randi_category-content">
+                    <h3>Cappuccino</h3>
+                    <a href="#" class="randi_view-more">View More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>

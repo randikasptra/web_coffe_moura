@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Moura's Coffee</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+
+<style>
+    /* Navbar */
+    .randi_navbar {
+        padding: 20px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+    }
+
+    .randi_navbar-list {
+        list-style-type: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    .randi_navbar-list a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    /* Hamburger Menu */
+    .hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 25px;
+        cursor: pointer;
+    }
+
+    .hamburger div {
+        width: 36px;
+        height: 4px;
+        background-color: #333;
+        border-radius: 5px;
+        transition: all 0.3s;
+    }
+
+    /* Mobile Navbar */
+    .randi_navbar-list {
+        display: flex;
+    }
+
+    .randi_navbar.active .randi_navbar-list {
+        display: block;
+        position: absolute;
+        top: 70px;
+        right: 10px;
+        background-color: #fff;
+        width: 100%;
+        padding: 20px;
+    }
+
+    .randi_navbar.active .hamburger div:nth-child(1) {
+        transform: rotate(45deg);
+        position: relative;
+        top: 10px;
+    }
+
+    .randi_navbar.active .hamburger div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .randi_navbar.active .hamburger div:nth-child(3) {
+        transform: rotate(-45deg);
+        position: relative;
+        top: -10px;
+    }
+
+    /* Hero Section */
+    .randi_hero {
+        background-image: url('../img/bgaboutt.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        text-align: center;
+        position: relative;
+    }
+
+    .randi_hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    .randi_hero-content {
+        position: relative;
+        z-index: 1;
+        line-height: 1rem;
+    }
+    .randi_hero-content h1{
+       margin-top: 50px;
+    }
+
+    .randi_hero h1 {
+        font-size: 5em;
+        margin-bottom: 20px;
+    }
+
+    .randi_btn {
+        background-color: #d4af37;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: background 0.3s;
+        margin-top: 2rem;
+    }
+
+    .randi_btn:hover {
+        background-color: #b89229;
+    }
+
+    /* Story Section */
+    .randi_story {
+        text-align: center;
+        padding: 50px 20px;
+        display: flex;
+        margin-top: 3rem;
+        background-color: #f8f8f8;
+    }
+
+    .randi_story2 {
+        text-align: center;
+        padding: 50px 20px;
+        display: flex;
+        margin-top: 3rem;
+        background-color: #f8f8f8;
+    }
+
+    .randi_story h1 {
+        font-size: 2.5em;
+        color: #d4af37;
+        margin-bottom: 20px;
+        font-family: 'Georgia', serif;
+    }
+
+    .randi_story p {
+        max-width: 800px;
+        margin: 0 auto 30px;
+        line-height: 1.8;
+        color: #333;
+    }
+
+    .randi_story-images {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .randi_story-images img {
+        width: 45%;
+        border-radius: 8rem;
+    }
+
+    /* Instagram Section */
+    .randi_instagram {
+        background-color: #f9f9f9;
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    .randi_instagram h2 {
+        font-size: 2.5em;
+        color: #d4af37;
+        font-family: 'Georgia', serif;
+        margin-bottom: 20px;
+    }
+
+    .randi_instagram-feed {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding: 10px;
+        justify-content: center;
+    }
+
+    .randi_instagram-feed img {
+        width: 15rem;
+        height: 15rem;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    /* Footer */
+    .randi_footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .randi_footer-content {
+        max-width: 800px;
+        margin: auto;
+    }
+
+    .randi_footer-content h3 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .randi_social-media {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .randi_social-media a {
+        color: #d4af37;
+        font-size: 1.5em;
+    }
+
+    .randi_footer p {
+        font-size: 0.9em;
+    }
+
+    .randi_footer a {
+        color: #d4af37;
+        text-decoration: none;
+        margin: 0 5px;
+    }
+
+    .randi_footer a:hover {
+        text-decoration: underline;
+    }
+
+    .ttg {
+        width: 70%;
+    }
+
+    .ttg p {
+        margin-top: 20px;
+    }
+
+    .randi_panen {
+        border-radius: 8rem;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .randi_navbar-list {
+            display: none;
+        }
+
+        .hamburger {
+            display: flex;
+            margin-left: auto;
+        }
+
+        .randi_navbar.active .randi_navbar-list {
+            display: block;
+        }
+        .randi_menu {
+            display: block;
+            flex-direction: column;
+            position: relative;
+            top: 60px;
+            right: 10px;
+            
+            width: 100%;
+            padding: 10px;
+            gap: 10px;
+            background-size: 100%;
+        }
+        
+        .randi_hamburger {
+            display: flex;
+        }
+        .randi_hero h1 {
+            font-size: 2em;
+        }
+
+        .randi_story-images img {
+            width: 100%;
+        }
+
+        .randi_instagram-feed {
+            gap: 5px;
+        }
+
+        .randi_instagram-feed img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .randi_story {
+            text-align: center;
+            padding: 2rem ;
+            display: block;
+            margin-top: 3rem;
+            background-color: #f8f8f8;
+        }
+
+        .randi_story2 {
+            text-align: center;
+            padding: 50px 20px;
+            display: block;
+            margin-top: 3rem;
+            background-color: #f8f8f8;
+        }
+
+        .randi_story h1 {
+            font-size: 2.5em;
+            color: #d4af37;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            margin-bottom: 30px;
+        }
+
+        .randi_story p {
+            line-height: 1.8;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .randi_story-images {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .randi_story-images img {
+            width: 15rem;
+            border-radius: 15rem;
+        }
+
+        .ttg {
+            width: 100%;
+            padding: 0px 1rem;
+        }
+
+        .ttg p {
+            margin-top: 20px;
+        }
+
+        .randi_panen {
+            border-radius: 15rem;
+        }
+        .randi_instagram {
+            background-color: #f9f9f9;
+            padding: 50px 20px;
+            text-align: center;
+        }
+    
+        .randi_instagram h2 {
+            font-size: 2.5em;
+            color: #d4af37;
+            font-family: 'Georgia', serif;
+            margin-bottom: 20px;
+        }
+    
+        .randi_instagram-feed {
+            display: block;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 10px;
+            flex-direction: column;
+        }
+    
+        .randi_instagram-feed img {
+            width: 10rem;
+            height: 10rem;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .randi_hero h1 {
+            font-size: 1.5em;
+        }
+
+        .randi_btn {
+            font-size: 1em;
+            padding: 8px 15px;
+        }
+
+        .randi_story h2,
+        .randi_instagram h2 {
+            font-size: 1.8em;
+        }
+    }
+</style>
+
+<body>
+    <header class="randi_navbar">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul class="randi_navbar-list">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./tentangKami.html">Tentang Kami</a></li>
+                <li><a href="./coffe.html">Coffee</a></li>
+                <img src="../img/LogoMoura.jpeg" alt="" style="width: 2rem; border-radius: 30px;">
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="./layanan.html">Layanan</a></li>
+                <li><a href="./member.html">Member</a></li>
+                <li><a href="./kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="randi_hero">
+        <div style="z-index: 1;">
+            <div class="randi_hero-content">
+                <h1 class="charm-regular">Welcome</h1>
+                <h1>Moura's Coffee</h1>
+            </div>
+            <button class="randi_btn">Reserve a Table</button>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="randi_story">
+        <div class="ttg">
+            <h1>Tentang Kami</h1>
+            <p>Selamat datang di Coffee Moura! Kami adalah kedai kopi yang berkomitmen untuk menghadirkan pengalaman
+                kopi terbaik bagi para pecinta kopi sejati. Di sini, kami menyajikan beragam pilihan kopi yang
+                berkualitas, mulai dari biji kopi lokal pilihan hingga varian kopi internasional.
+
+                Di Coffee Moura, kami percaya bahwa secangkir kopi bukan hanya sekadar minuman, melainkan sebuah
+                pengalaman yang dapat membangkitkan semangat, memberikan kenyamanan, dan menciptakan momen berharga.
+                Setiap cangkir yang kami sajikan dibuat dengan penuh dedikasi, mulai dari proses pemilihan biji kopi
+                hingga penyajiannya, untuk memastikan setiap pelanggan menikmati kualitas dan rasa yang otentik.
+
+                Apakah Anda seorang penikmat kopi klasik atau pencinta kreasi modern, Coffee Moura memiliki sesuatu yang
+                bisa dinikmati oleh setiap orang. Kunjungi kami dan temukan pilihan kopi favorit Anda di sini!</p>
+        </div>
+        <div class="randi_story-images">
+            <img src="../img/coffe2.jpg" alt="Food Dish" class="randi_panen">
+        </div>
+    </section>
+    <section class="randi_story2">
+        <div class="randi_story-images">
+            <img src="../img/panen1.jpg" alt="Food Dish" class="randi_panen">
+        </div>
+        <div class="ttg">
+            <p>Di Coffee Moura, kami bangga menghadirkan kopi yang dihasilkan dari proses yang kami lakukan sendiri,
+                mulai dari pemilihan biji kopi hingga penyajiannya. Kami percaya bahwa kualitas kopi terbaik berasal
+                dari dedikasi dalam setiap langkah pembuatannya. Oleh karena itu, kami secara khusus memilih biji kopi
+                terbaik dari perkebunan lokal maupun internasional yang berkualitas tinggi.
+
+                Proses pemanggangan biji kopi kami dilakukan dengan hati-hati dan perhatian pada setiap detail,
+                memastikan profil rasa yang kaya dan unik. Melalui teknik pemanggangan khusus, kami mengeluarkan aroma
+                dan rasa terbaik dari setiap biji kopi yang kami pilih. Setiap cangkir kopi yang Anda nikmati di Coffee
+                Moura adalah hasil dari kerja keras dan keahlian kami dalam menciptakan kopi dengan cita rasa yang
+                sempurna dan konsisten.
+
+                Bagi kami, setiap tahap dalam pembuatan kopi adalah sebuah seni. Dengan mengolah kopi sendiri, kami
+                memastikan bahwa hanya yang terbaik yang kami sajikan untuk Anda — kopi yang segar, beraroma, dan penuh
+                cita rasa. Nikmati keaslian kopi yang dihasilkan dari proses yang kami lakukan dengan sepenuh hati,
+                hanya di Coffee Moura.</p>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="randi_instagram">
+        <h2>Instagram Happenings</h2>
+        <div class="randi_instagram-feed">
+            <img src="../img/panen1.jpg" alt="Instagram Post 1">
+            <img src="../img/panen2.jpg" alt="Instagram Post 2">
+            <img src="../img/panen3.jpg" alt="Instagram Post 3">
+            <img src="../img/panen4.jpg" alt="Instagram Post 4">
+            <img src="../img/panen5.jpg" alt="Instagram Post 5">
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="../img/LogoMoura.jpeg" alt="Logo" class="logo"> <!-- Replace logo.png with your logo path -->
+            </div>
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <ul>
+                    <li><a href="#">Our Heritage</a></li>
+                    <li><a href="#">Our Company</a></li>
+                    <li><a href="#">Coffeehouse</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Responsibility</h4>
+                <ul>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Ethical Sourcing</a></li>
+                    <li><a href="#">Environment</a></li>
+                    <li><a href="#">Diversity</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Season's Gifting</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Delivery</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social-media">
+                <h4>Social Media</h4>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <div class="app-download">
+                    <img src="google-play.png" alt="Google Play"> <!-- Replace with Google Play image -->
+                    <img src="app-store.png" alt="App Store"> <!-- Replace with App Store image -->
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <ul>
+                <li><a href="#">Web Accessibility</a></li>
+                <li><a href="#">Privacy Statement</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <p>&copy; 2022 Starbucks Coffee Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
