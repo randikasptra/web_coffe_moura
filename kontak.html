@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,64 +8,125 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        .randi_container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
 
-/* Main Image Grid Styling */
-.randi_image-grid {
-    display: grid;
-    gap: 10px;
-    padding: 20px;
-}
+        .randi_card {
+            width: 150px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            border-radius: 8px;
+            background-color: #fff;
+        }
 
-/* Grid Layout for Desktop */
-.randi_grid-item {
-    overflow: hidden;
-    border-radius: 8px;
-}
+        .randi_img {
+            width: 100px;
+            /* Ukuran gambar */
+            height: 100px;
+            /* Ukuran gambar */
+            border-radius: 50%;
+            /* Membuat gambar menjadi bulat */
+            object-fit: cover;
+            /* Menjaga proporsi gambar */
+            margin-bottom: 10px;
+        }
 
-.randi_grid-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    border-radius: 8px;
-}
+        .randi_card h3 {
+            font-size: 1em;
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
 
-/* Grid Columns */
-@media (min-width: 1024px) {
-    .randi_image-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (min-width: 768px) and (max-width: 1023px) {
-    .randi_image-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 767px) {
-    .randi_image-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
+        .randi_card p {
+            font-size: 0.9em;
+            color: #555;
+            margin: 0;
+        }
     </style>
 </head>
+
 <body>
 
-    <!-- Responsive Image Grid Section -->
-    <section class="randi_image-grid">
-        <div class="randi_grid-item"><img src="../img/americano.jpg" alt="Coffee Image 1"></div>
-        <div class="randi_grid-item"><img src="../img/americano.jpg" alt="Coffee Image 1"></div>
-        <div class="randi_grid-item"><img src="../img/americano.jpg" alt="Coffee Image 1"></div>
-        <div class="randi_grid-item"><img src="../img/americano.jpg" alt="Coffee Image 1"></div>
-    </section>
+    <div class="randi_container">
+        <div class="randi_card">
+            <img src="./img/capucino1.jpg" alt="Espresso" class="randi_img">
+            <h3>Espresso / 2.00</h3>
+            <p>Consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        </div>
+
+        <div class="randi_card">
+            <img src="./img/flat white.jpg" alt="Double Espresso" class="randi_img">
+            <h3>Double Espresso / 2.50</h3>
+            <p>Reprehenderit in voluptate velit esse cillum dolore eu.</p>
+        </div>
+
+        <div class="randi_card">
+            <img src="./img/ekpreso.png" alt="Americano" class="randi_img">
+            <h3>Americano / 3.00</h3>
+            <p>Lorem ipsum dolor sit amet, adipiscing elit.</p>
+        </div>
+        <div class="randi_card">
+            <img src="./img/capucino1.jpg" alt="Espresso" class="randi_img">
+            <h3>Espresso / 2.00</h3>
+            <p>Consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        </div>
+
+        <div class="randi_card">
+            <img src="./img/flat white.jpg" alt="Double Espresso" class="randi_img">
+            <h3>Double Espresso / 2.50</h3>
+            <p>Reprehenderit in voluptate velit esse cillum dolore eu.</p>
+        </div>
+
+        <div class="randi_card">
+            <img src="./img/ekpreso.png" alt="Americano" class="randi_img">
+            <h3>Americano / 3.00</h3>
+            <p>Lorem ipsum dolor sit amet, adipiscing elit.</p>
+        </div>
+        <div class="randi_card">
+            <img src="./img/capucino1.jpg" alt="Espresso" class="randi_img">
+            <h3>Espresso / 2.00</h3>
+            <p>Consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        </div>
+
+        <div class="randi_card">
+            <img src="./img/flat white.jpg" alt="Double Espresso" class="randi_img">
+            <h3>Double Espresso / 2.50</h3>
+            <p>Reprehenderit in voluptate velit esse cillum dolore eu.</p>
+        </div>
+
+        <div class="randi_card">
+            <img src="./img/ekpreso.png" alt="Americano" class="randi_img">
+            <h3>Americano / 3.00</h3>
+            <p>Lorem ipsum dolor sit amet, adipiscing elit.</p>
+        </div>
+        <div class="randi_card">
+            <img src="./img/capucino1.jpg" alt="Espresso" class="randi_img">
+            <h3>Espresso / 2.00</h3>
+            <p>Consectetur adipiscing elit, sed do eiusmod tempor.</p>
+        </div>
+
+        <div class="randi_card">
+            <img src="./img/flat white.jpg" alt="Double Espresso" class="randi_img">
+            <h3>Double Espresso / 2.50</h3>
+            <p>Reprehenderit in voluptate velit esse cillum dolore eu.</p>
+        </div>
+
+        <div class="randi_card">
+            <img src="./img/ekpreso.png" alt="Americano" class="randi_img">
+            <h3>Americano / 3.00</h3>
+            <p>Lorem ipsum dolor sit amet, adipiscing elit.</p>
+        </div>
+
+        <!-- Tambahkan card lain di sini sesuai kebutuhan -->
+    </div>
+
 
 </body>
-</html>
 
+</html>
