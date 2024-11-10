@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Friendly Store</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" href="./img/logomouraBundar.png" type="image/x-icon">
+
+    <style>
+        /* Header */
+        .randi_header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .randi_logo h1 {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .randi_nav a {
+            margin: 0 10px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .randi_nav a img {
+            width: 20px;
+            vertical-align: middle;
+        }
+
+        /* Hero Section */
+        .randi_hero {
+            position: relative;
+            background-image: url(./img/heroNew.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px;
+            background-color: #f5f5f5;
+        }
+
+        .randi_hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            /* Overlay hitam dengan sedikit transparansi */
+            z-index: 1;
+            /* Menempatkan overlay di atas background */
+        }
+
+        .randi_hero-content {
+            position: relative;
+            max-width: 600px;
+            text-align: center;
+            z-index: 2;
+            /* Menempatkan konten di atas overlay */
+        }
+
+        .randi_hero-content h1 {
+            font-size: 3rem;
+            color: #cab06a;
+        }
+
+        .randi_hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .randi_hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #f5f5f5;
+            /* Warna teks agar lebih kontras dengan overlay */
+        }
+
+
+        .randi_Container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            gap: 20px;
+            color: #5a4636;
+        }
+        
+        /* Left Section (About Membership) */
+        .randi_AboutMembership {
+            flex: 1;
+            min-width: 300px;
+            background-color: #f0e6de;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .randi_Title {
+            font-size: 1.7em;
+            margin-bottom: 15px;
+            color: #3b2e23;
+        }
+        
+        .randi_Description {
+            font-size: 1em;
+            margin-bottom: 20px;
+            color: #6a5a47;
+        }
+        
+        .randi_Benefits .randi_BenefitItem {
+            margin-bottom: 15px;
+        }
+        
+        .randi_BenefitTitle {
+            font-weight: bold;
+            color: #8c6239;
+        }
+        
+        /* Right Section (Join Form) */
+        .randi_JoinForm {
+            flex: 1;
+            min-width: 300px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .randi_FormTitle {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            color: #3b2e23;
+        }
+        
+        .randi_FormRow {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+        
+        .randi_Input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d3c4b1;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        
+        .randi_Input:focus {
+            outline: none;
+            border-color: #8c6239;
+            box-shadow: 0 0 5px rgba(140, 98, 57, 0.2);
+        }
+        
+        .randi_SubmitButton {
+            width: 100%;
+            background-color: #8c6239;
+            color: white;
+            padding: 12px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        .randi_SubmitButton:hover {
+            background-color: #704d33;
+        }
+
+        /* Footer Section */
+        .randi_footer {
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        .randi_footer .footer_info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .randi_footer .footer_menu {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .randi_footer .footer_menu a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .randi_footer .footer_contacts p {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .randi_footer .footer_social a img {
+            width: 20px;
+            margin: 0 10px;
+        }
+
+        @media (max-width: 768px) {
+            .randi_hero {
+                display: block;
+                align-items: center;
+                justify-content: center;
+                padding: 50px;
+                background-color: #f5f5f5;
+
+            }
+
+            .randi_hero-content h1 {
+                font-size: 2, 5rem;
+            }
+
+            .randi_menu-item {
+                width: 150px;
+                text-align: center;
+                padding: 20px;
+                background-color: #fff;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                border-radius: 10px;
+                position: relative;
+            }
+
+            .randi_help {
+                padding: 40px 2rem;
+                background-color: #f0d897;
+                text-align: center;
+            }
+
+            .randi_Container {
+                flex-direction: column;
+            }
+            .randi_FormRow {
+                flex-direction: column;
+            }
+        }
+    
+
+        
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="randi_navbar">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <ul class="randi_navbar-list">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./tentangKami.html">Tentang Kami</a></li>
+                <li><a href="./coffe.html">Coffee</a></li>
+                <img src="../img/LogoMoura.jpeg" alt="" style="width: 2rem; border-radius: 30px;">
+                <li><a href="./menu.html">Menu</a></li>
+                <li><a href="./layanan.html">Layanan</a></li>
+                <li><a href="./member.html" style="font-weight: 900;">Member</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="randi_hero">
+        <div class="randi_hero-content">
+            <h1>Ayo Joinn Ke Moura's Member</h1>
+        </div>
+        
+    </section>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Moura Coffee</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="randi_Container">
+        <!-- Left Section (About Membership) -->
+        <div class="randi_AboutMembership">
+            <h2 class="randi_Title">Bergabunglah Menjadi Member Moura Coffee</h2>
+            <p class="randi_Description">Dapatkan diskon eksklusif, akses ke menu spesial, kesempatan memenangkan give away, dan kopi hitam gratis setiap tanggal 16. Jadilah bagian dari komunitas kami yang berfokus pada kualitas kopi terbaik.</p>
+            <div class="randi_Benefits">
+                <div class="randi_BenefitItem">
+                    <h3 class="randi_BenefitTitle">Diskon 10% Minuman</h3>
+                    <p>Nikmati potongan harga 10% untuk semua minuman.</p>
+                </div>
+                <div class="randi_BenefitItem">
+                    <h3 class="randi_BenefitTitle">Menu Spesial Member</h3>
+                    <p>Akses ke menu eksklusif yang hanya tersedia untuk member.</p>
+                </div>
+                <div class="randi_BenefitItem">
+                    <h3 class="randi_BenefitTitle">Free Give Away</h3>
+                    <p>Ikuti program give away eksklusif untuk member.</p>
+                </div>
+                <div class="randi_BenefitItem">
+                    <h3 class="randi_BenefitTitle">Gratis Kopi Hitam Tanggal 16</h3>
+                    <p>Dapatkan kopi hitam gratis setiap tanggal 16 setiap bulannya.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section (Join Form) -->
+        <div class="randi_JoinForm">
+            <h2 class="randi_FormTitle">Daftar Menjadi Member</h2>
+            <form>
+                <div class="randi_FormRow">
+                    <input type="text" class="randi_Input" placeholder="Nama Lengkap" required>
+                </div>
+                <div class="randi_FormRow">
+                    <input type="email" class="randi_Input" placeholder="Email" required>
+                </div>
+                <div class="randi_FormRow">
+                    <input type="password" class="randi_Input" placeholder="Kata Sandi" required>
+                </div>
+                <div class="randi_FormRow">
+                    <input type="text" class="randi_Input" placeholder="Nomor Telepon" required>
+                </div>
+                <button type="submit" class="randi_SubmitButton" onclick="showSwitchAlert()">Join Now</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+  
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="../img/LogoMoura.jpeg" alt="Logo" class="logo"> <!-- Replace logo.png with your logo path -->
+            </div>
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <ul>
+                    <li><a href="#">Our Heritage</a></li>
+                    <li><a href="#">Our Company</a></li>
+                    <li><a href="#">Coffeehouse</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Responsibility</h4>
+                <ul>
+                    <li><a href="#">Community</a></li>
+                    <li><a href="#">Ethical Sourcing</a></li>
+                    <li><a href="#">Environment</a></li>
+                    <li><a href="#">Diversity</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Season's Gifting</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Delivery</a></li>
+                </ul>
+            </div>
+            <div class="footer-section social-media">
+                <h4>Social Media</h4>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <div class="app-download">
+                    <img src="./img/tiktokLogo.png" alt="Google Play" style="width: 4rem;"> 
+                    <img src="./img/ig.png" alt="App Store" style="width: 4rem;"> 
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <ul>
+                <li><a href="#">Web Accessibility</a></li>
+                <li><a href="#">Privacy Statement</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <p>&copy; 2022 Starbucks Coffee Company. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>

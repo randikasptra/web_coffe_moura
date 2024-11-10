@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+        /* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f9fc;
+}
+
+.randi_Container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Left Section (Contact Info) */
+.randi_ContactInfo {
+    flex: 1;
+    min-width: 300px;
+    background-color: #f0f4fa;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.randi_Title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.randi_Description {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.randi_ContactDetails .randi_ContactItem {
+    margin-bottom: 15px;
+}
+
+.randi_ContactTitle {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.randi_SocialMedia {
+    margin-top: 20px;
+}
+
+.randi_SocialIcons {
+    display: flex;
+    gap: 10px;
+}
+
+.randi_SocialIcon {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8em;
+    width: 30px;
+    height: 30px;
+}
+
+/* Right Section (Form) */
+.randi_ContactForm {
+    flex: 1;
+    min-width: 300px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.randi_FormTitle {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.randi_FormRow {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.randi_Input,
+.randi_Textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.randi_Textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.randi_SubmitButton {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.randi_SubmitButton:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .randi_Container {
+        flex-direction: column;
+    }
+    .randi_FormRow {
+        flex-direction: column;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="randi_Container">
+        <!-- Left Section (Get in Touch) -->
+        <div class="randi_ContactInfo">
+            <h2 class="randi_Title">Get in touch</h2>
+            <p class="randi_Description">Sociology viverra lectus placerat sem efficitur molestie vehicula cubilia leo etiam nam.</p>
+            <div class="randi_ContactDetails">
+                <div class="randi_ContactItem">
+                    <h3 class="randi_ContactTitle">Head Office</h3>
+                    <p>Jalan Cempaka Warig No 22<br>Jakarta - Indonesia</p>
+                </div>
+                <div class="randi_ContactItem">
+                    <h3 class="randi_ContactTitle">Email Us</h3>
+                    <p>support@yourdomain.tld<br>hello@yourdomain.tld</p>
+                </div>
+                <div class="randi_ContactItem">
+                    <h3 class="randi_ContactTitle">Call Us</h3>
+                    <p>Phone: +6221.2002.2012<br>Fax: +6221.2002.2013</p>
+                </div>
+            </div>
+            <div class="randi_SocialMedia">
+                <p>Follow our social media</p>
+                <div class="randi_SocialIcons">
+                    <a href="#" class="randi_SocialIcon">FB</a>
+                    <a href="#" class="randi_SocialIcon">IG</a>
+                    <a href="#" class="randi_SocialIcon">TW</a>
+                    <a href="#" class="randi_SocialIcon">YT</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section (Form) -->
+        <div class="randi_ContactForm">
+            <h2 class="randi_FormTitle">Send us a message</h2>
+            <form>
+                <div class="randi_FormRow">
+                    <input type="text" class="randi_Input" placeholder="Name">
+                    <input type="text" class="randi_Input" placeholder="Company">
+                </div>
+                <div class="randi_FormRow">
+                    <input type="text" class="randi_Input" placeholder="Phone">
+                    <input type="email" class="randi_Input" placeholder="Email">
+                </div>
+                <div class="randi_FormRow">
+                    <input type="text" class="randi_Input" placeholder="Subject">
+                </div>
+                <div class="randi_FormRow">
+                    <textarea class="randi_Textarea" placeholder="Message"></textarea>
+                </div>
+                <button type="submit" class="randi_SubmitButton">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
