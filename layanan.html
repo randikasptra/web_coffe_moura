@@ -11,10 +11,6 @@
 </head>
 
 <style>
-
-
-
-
     .randi_navbar.active .hamburger div:nth-child(1) {
         transform: rotate(45deg);
         position: relative;
@@ -40,10 +36,11 @@
         height: 90vh;
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: left;
         color: #fff;
-        text-align: center;
+        text-align: left;
         position: relative;
+        font-size: 9px;
     }
 
     .randi_hero::after {
@@ -383,15 +380,17 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="randi_hero">
-        <div style="z-index: 1;">
-            <div class="randi_hero-content">
-                <h1 class="charm-regular">Welcome</h1>
-                <h1>Moura's Coffee</h1>
-            </div>
-            <button class="randi_btn">Reserve a Table</button>
+
+    <div class="randi_hero">
+        <div class="randi_header_content" style="z-index: 1; margin-left: 3rem;">
+            <h1>Layanan Spesial untuk <br> Pecinta Kopi di Moura Coffee</h1>
+
+            <p>Temukan berbagai layanan unggulan kami yang dirancang untuk menghadirkan pengalaman kopi terbaik,<br>
+                mulai dari pemesanan kopi premium hingga keanggotaan eksklusif yang memberikan berbagai keuntungan.
+            </p>
+
         </div>
-    </section>
+    </div>
 
     <!-- Story Section -->
     <section class="randi_story">
@@ -482,8 +481,8 @@
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <div class="app-download">
-                    <img src="google-play.png" alt="Google Play"> <!-- Replace with Google Play image -->
-                    <img src="app-store.png" alt="App Store"> <!-- Replace with App Store image -->
+                    <img src="./img/tiktokLogo.png" alt="Google Play" style="width: 4rem;">
+                    <img src="./img/ig.png" alt="App Store" style="width: 4rem;">
                 </div>
             </div>
         </div>
